@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/04 23:04:26 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/05 22:42:46 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,36 @@
 
 #include "push_swap.h"
 
+void ft_indexlst(t_list **unsorted, t_list **sorted)
+{
+    t_list *i;
+    t_list *j;
+    int index;
+
+    index = 0;
+    i = *sorted;
+    while(i)
+    {
+        j = *unsorted;
+        while (j)
+        {
+            if (i->data == j->data)
+                j->data = index;
+            j = j->next;
+        }
+        i = i->next;
+        index++;
+    }
+}
+
 int main(int ac, char **av)
 {
     t_list *stack_a;
+    t_list *stack_b;
+    t_list *stack_copy;
 
-    stack_a = NULL;
+    (void)stack_a;
+    (void)stack_b;
 
     if (ac > 1)
     {
@@ -29,11 +54,15 @@ int main(int ac, char **av)
         if (check_parameters(av, ac))
         {
             stack_a = create_stack_a(av);
-            ft_sortlst(&stack_a);
-            while (stack_a)
+            stack_copy = create_stack_a(av);
+            ft_sortlst(&stack_copy);
+            ft_indexlst(&stack_a, &stack_copy);
+            printf("%5c%5c\n", 'A', 'B');
+            while (stack_a && stack_copy)
             {
-                printf("%d\n", stack_a->data);
+                printf("%5d%5d\n", stack_a->data, stack_copy->data);
                 stack_a = stack_a->next;
+                stack_copy = stack_copy->next;
             }
         }
         else

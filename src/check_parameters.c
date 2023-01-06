@@ -6,13 +6,13 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/04 23:09:24 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/05 22:39:33 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_param_order(char **str, int size)
+int is_unsorted(char **str, int size)
 {
     int i;
     int j;
@@ -33,7 +33,7 @@ int check_param_order(char **str, int size)
     return (0);
 }
 
-int check_parameters(char **str, int size)
+int is_duplicated(char **str, int size)
 {
     int i;
     int j;
@@ -41,21 +41,22 @@ int check_parameters(char **str, int size)
     i = 1;
     while (i < size)
     {
-        if (!ft_isnumber(str[i]))
-            return (0);
-        i++;
-    }
-    i = 1;
-    while (i < size - 1)
-    {
         j = i + 1;
         while (j < size)
         {
             if (ft_atoi(str[i]) == ft_atoi(str[j]))
-                return (0);
+                return (1);
             j++;
         }
         i++;
     }
-    return check_param_order(str, size);
+    return (0);
+}
+
+int check_parameters(char **str, int size)
+{
+    if (is_unsorted(str, size) && !is_duplicated(str, size))
+        return (1);
+    else
+        return (0);
 }
