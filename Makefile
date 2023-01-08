@@ -1,23 +1,24 @@
 NAME = push_swap
-SRC = $(wildcard ./src/*c)
-INC = $(wildcard ./inc/*c)
-OBJ1 = $(SRC:.c=.o)
-OBJ2 = $(INC:.c=.o)
+vpath %.c src
+SRC = $(wildcard src/*c)
+OBJ = $(patsubst src/%.c, obj/%.o, $(SRC))
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra -g3
 
 .SILENT:
 
-$(NAME):	$(OBJ1) $(OBJ2)
-	$(CC) $(CFLAGS) $(OBJ1) $(OBJ2) -o $@
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	$(CC) $(CFLAGS)  $^ -o $@
 	echo "Compilation done successfully!"
 	echo "Execute ./push_swap <list of numbers>"
 
-all:	$(NAME)
+obj/%.o:	%.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f ./src/*.o ./inc/*.o
-	rm -f ./src/*.out ./inc/*.out
+	rm -f */*.o *.o */*.out *.out
 
 fclean: clean
 	rm -f $(NAME)

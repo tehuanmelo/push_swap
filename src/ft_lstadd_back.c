@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 09:59:06 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/04 22:12:47 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 21:49:10 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 **     Adds the node ’new’ at the end of the list.
 */
 
-#include "includes.h"
+#include "../inc/includes.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

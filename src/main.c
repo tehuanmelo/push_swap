@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/05 22:42:46 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 21:50:03 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // OR operator returns 1 if any bit of any operand is 1
 // XOR operator returns 1 if the correspnding bits are opposite
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 void ft_indexlst(t_list **unsorted, t_list **sorted)
 {
@@ -57,10 +57,10 @@ int main(int ac, char **av)
             stack_copy = create_stack_a(av);
             ft_sortlst(&stack_copy);
             ft_indexlst(&stack_a, &stack_copy);
-            printf("%5c%5c\n", 'A', 'B');
+            printf("%7c%7c\n", 'A', 'B');
             while (stack_a && stack_copy)
             {
-                printf("%5d%5d\n", stack_a->data, stack_copy->data);
+                printf("%7d%7d\n", stack_a->data, stack_copy->data);
                 stack_a = stack_a->next;
                 stack_copy = stack_copy->next;
             }

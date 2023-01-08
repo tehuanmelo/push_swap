@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_sortlst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 19:21:26 by tde-melo          #+#    #+#             */
-/*   Updated: 2023/01/04 23:10:45 by tehuanmelo       ###   ########.fr       */
+/*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
+/*   Updated: 2023/01/08 21:49:40 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Parameters
-//     lst: The beginning of the list.
-// Return value
-//     Last node of the list
-// External functs.
-//     None
-// Description
-//     Returns the last node of the list.
+#include "../inc/includes.h"
 
-#include "includes.h"
-
-t_list	*ft_lstlast(t_list *lst)
+void ft_sortlst(t_list **list)
 {
-	while (lst)
-	{
-		if (lst->next == NULL)
-			return (lst);
-		lst = lst->next;
-	}
-	return (lst);
+    t_list *i;
+    t_list *j;
+    int tmp;
+
+    i = *list;
+    while (i)
+    {
+        j = i->next;
+        while (j)
+        {
+            if (i->data > j->data)
+            {
+                tmp = i->data;
+                i->data = j->data;
+                j->data = tmp;
+            }
+            j = j->next;
+        }
+        i = i->next;
+    }
 }

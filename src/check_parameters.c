@@ -6,11 +6,31 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/05 22:39:33 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 23:01:02 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
+
+int is_number(char *str)
+{
+    while (*str == 32 || (*str >= 9 && *str <= 13))
+        str++;
+    if (*str == '+' || *str == '-')
+        str++;
+    if (*str == '0' || *str == '1')
+        str++;
+    else
+        return 0;
+    while (*str)
+    {
+        if (*str != ' ')
+            return (0);
+        str++;
+    }
+    return (1);
+    
+}
 
 int is_unsorted(char **str, int size)
 {
@@ -41,9 +61,15 @@ int is_duplicated(char **str, int size)
     i = 1;
     while (i < size)
     {
+        if (ft_atoi(str[i]) == 0 || ft_atoi(str[i]) == -1)
+        {
+                if(!is_number(str[i])) 
+                    return (1);
+        }
         j = i + 1;
         while (j < size)
         {
+            
             if (ft_atoi(str[i]) == ft_atoi(str[j]))
                 return (1);
             j++;

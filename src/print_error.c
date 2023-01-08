@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/04 22:53:29 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 21:51:51 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes.h"
+#include "../inc/includes.h"
 
-int ft_isnumber(char *str)
+void print_error()
 {
-    while (*str)
-    {
-        if (*str < '0' || *str > '9')
-            return (0);
-        str++;
-    }
-    return (1);
+    ft_putstr("Error\n");
 }

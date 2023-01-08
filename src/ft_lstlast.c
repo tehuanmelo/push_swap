@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/03 21:35:07 by tehuanmelo       ###   ########.fr       */
+/*   Created: 2022/07/28 19:21:26 by tde-melo          #+#    #+#             */
+/*   Updated: 2023/01/08 21:49:18 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes.h"
+// Parameters
+//     lst: The beginning of the list.
+// Return value
+//     Last node of the list
+// External functs.
+//     None
+// Description
+//     Returns the last node of the list.
 
-void print_error()
+#include "../inc/includes.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-    ft_putstr("Error\n");
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

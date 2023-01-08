@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sortlst.c                                       :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/04 23:03:09 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 21:49:01 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes.h"
+#include "../inc/includes.h"
 
-void ft_sortlst(t_list **list)
+int ft_isnumber(char *str)
 {
-    t_list *i;
-    t_list *j;
-    int tmp;
-
-    i = *list;
-    while (i)
+    while (*str)
     {
-        j = i->next;
-        while (j)
-        {
-            if (i->data > j->data)
-            {
-                tmp = i->data;
-                i->data = j->data;
-                j->data = tmp;
-            }
-            j = j->next;
-        }
-        i = i->next;
+        if (*str < '0' || *str > '9')
+            return (0);
+        str++;
     }
+    return (1);
 }

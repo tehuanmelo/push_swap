@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 10:47:46 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/04 23:11:03 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 21:49:24 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 **     ’next’ is initialized to NULL.
 */
 
-#include "includes.h"
+#include "../inc/includes.h"
 
 t_list	*ft_lstnew(int content)
 {

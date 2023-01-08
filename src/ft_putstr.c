@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 16:16:08 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/04 21:28:54 by tehuanmelo       ###   ########.fr       */
+/*   Created: 2023/01/03 18:59:40 by tehuanmelo        #+#    #+#             */
+/*   Updated: 2023/01/08 21:49:34 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include <stdio.h>
-#include <stdlib.h>
 #include "../inc/includes.h"
 
-
-int     check_parameters(char **str, int size);
-t_list  *create_stack_a(char **list_of_numbers);
-
-
-# endif
+void ft_putstr(char *str)
+{
+    while (*str)
+        write(1, str++, 1);
+}
