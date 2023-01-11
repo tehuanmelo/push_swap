@@ -3,7 +3,8 @@ vpath %.c src
 SRC = $(wildcard src/*c)
 OBJ = $(patsubst src/%.c, obj/%.o, $(SRC))
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra
+# CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 FT_PRINTF = ./inc/ft_printf
 
 .SILENT:

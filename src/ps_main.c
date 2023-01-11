@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/10 21:36:34 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/11 21:21:55 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 #include "../inc/push_swap.h"
 
 // remember to delete this function
-void print_list(t_list *list)
+void print_list(t_list *list, char c)
 {
+    printf("-----------\n");
+    printf("stack %c\n", c);
     while (list)
     {
         printf("%d\n", list->data);
@@ -32,23 +34,22 @@ int main(int ac, char **av)
     t_list *stack_b;
     t_list *copy;
 
+    stack_a = NULL;
+    stack_b = NULL;
+    copy = NULL;
+
     if (ac > 1)
     {
         stack_a = create_stack_a(av);
-        stack_b = NULL;
         copy = create_stack_a(av);
         ft_sortlst(&copy);
         ft_indexlst(&stack_a, &copy);
-        printf("----------\n");
-        printf("stack a\n");
-        printf("----------\n");
+        ft_freelst(copy);
         push_swap(&stack_a, &stack_b);
-        printf("----------\n");
-        printf("stack a\n");
-        printf("----------\n");
-        print_list(stack_a);
-       
+        ft_freelst(stack_a);
+        ft_freelst(stack_b);
     }
-    else
-        print_error();
+
+    // print_list(stack_a, 'a');
+    // print_list(stack_b, 'b');
 }

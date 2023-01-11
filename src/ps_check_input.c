@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_parameters.c                                 :+:      :+:    :+:   */
+/*   ps_check_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 23:01:02 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/11 21:29:54 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int is_duplicated(char **str, int size)
     return (0);
 }
 
-int check_parameters(char **str, int size)
+int check_input(char **str, int size)
 {
     if (is_unsorted(str, size) && !is_duplicated(str, size))
         return (1);
