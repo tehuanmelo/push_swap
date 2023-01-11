@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 21:50:39 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/10 16:37:23 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ t_list *create_stack_a(char **input)
         node = ft_lstnew(content);
         ft_lstadd_back(&list, node); 
     }
+    
     return list;
 }

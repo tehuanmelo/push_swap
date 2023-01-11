@@ -6,11 +6,11 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 18:59:40 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 21:49:34 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 23:10:45 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/includes.h"
+#include "../inc/push_swap.h"
 
 void ft_putstr(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 21:49:40 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/10 15:36:25 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/includes.h"
+#include "../inc/push_swap.h"
 
 void ft_sortlst(t_list **list)
 {

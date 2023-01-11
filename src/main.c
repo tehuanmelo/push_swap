@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 21:50:03 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/10 21:36:34 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,13 @@
 
 #include "../inc/push_swap.h"
 
-void ft_indexlst(t_list **unsorted, t_list **sorted)
+// remember to delete this function
+void print_list(t_list *list)
 {
-    t_list *i;
-    t_list *j;
-    int index;
-
-    index = 0;
-    i = *sorted;
-    while(i)
+    while (list)
     {
-        j = *unsorted;
-        while (j)
-        {
-            if (i->data == j->data)
-                j->data = index;
-            j = j->next;
-        }
-        i = i->next;
-        index++;
+        printf("%d\n", list->data);
+        list = list->next;
     }
 }
 
@@ -42,31 +30,24 @@ int main(int ac, char **av)
 {
     t_list *stack_a;
     t_list *stack_b;
-    t_list *stack_copy;
-
-    (void)stack_a;
-    (void)stack_b;
+    t_list *copy;
 
     if (ac > 1)
     {
-        // check_parameter function returns 0 if find duplicates,
-        // if is not a number or if the parameters are sorted
-        if (check_parameters(av, ac))
-        {
-            stack_a = create_stack_a(av);
-            stack_copy = create_stack_a(av);
-            ft_sortlst(&stack_copy);
-            ft_indexlst(&stack_a, &stack_copy);
-            printf("%7c%7c\n", 'A', 'B');
-            while (stack_a && stack_copy)
-            {
-                printf("%7d%7d\n", stack_a->data, stack_copy->data);
-                stack_a = stack_a->next;
-                stack_copy = stack_copy->next;
-            }
-        }
-        else
-            print_error();
+        stack_a = create_stack_a(av);
+        stack_b = NULL;
+        copy = create_stack_a(av);
+        ft_sortlst(&copy);
+        ft_indexlst(&stack_a, &copy);
+        printf("----------\n");
+        printf("stack a\n");
+        printf("----------\n");
+        push_swap(&stack_a, &stack_b);
+        printf("----------\n");
+        printf("stack a\n");
+        printf("----------\n");
+        print_list(stack_a);
+       
     }
     else
         print_error();

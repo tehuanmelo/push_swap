@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 19:21:26 by tde-melo          #+#    #+#             */
-/*   Updated: 2023/01/08 21:49:18 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 23:10:30 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // Description
 //     Returns the last node of the list.
 
-#include "../inc/includes.h"
+#include "../inc/push_swap.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

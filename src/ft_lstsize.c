@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:05:39 by tde-melo          #+#    #+#             */
-/*   Updated: 2023/01/08 21:49:31 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 23:10:37 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // Description
 //     Counts the number of nodes in a list.
 
-#include "../inc/includes.h"
+#include "../inc/push_swap.h"
 
 int	ft_lstsize(t_list *lst)
 {

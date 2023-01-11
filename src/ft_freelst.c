@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_freelst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 23:10:20 by tehuanmelo       ###   ########.fr       */
+/*   Created: 2023/01/10 17:57:36 by tehuanmelo        #+#    #+#             */
+/*   Updated: 2023/01/10 18:00:53 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int ft_isnumber(char *str)
+void ft_freelst(t_list *list)
 {
-    while (*str)
+    t_list *tmp;
+    
+    tmp = list;
+    while (tmp)
     {
-        if (*str < '0' || *str > '9')
-            return (0);
-        str++;
+        tmp = tmp->next;
+        free(list);
+        list = tmp;
     }
-    return (1);
 }

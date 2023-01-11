@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:59:22 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 22:18:44 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/08 23:10:13 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** 
 */
 
-#include "../inc/includes.h"
+#include "../inc/push_swap.h"
 
 int	ft_atoi(const char *str)
 {

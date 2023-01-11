@@ -4,13 +4,14 @@ SRC = $(wildcard src/*c)
 OBJ = $(patsubst src/%.c, obj/%.o, $(SRC))
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g3
+FT_PRINTF = ./inc/ft_printf
 
 .SILENT:
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS)  $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 	echo "Compilation done successfully!"
 	echo "Execute ./push_swap <list of numbers>"
 

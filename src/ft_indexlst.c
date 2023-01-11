@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_indexlst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 23:10:20 by tehuanmelo       ###   ########.fr       */
+/*   Created: 2023/01/10 18:14:37 by tehuanmelo        #+#    #+#             */
+/*   Updated: 2023/01/10 18:14:54 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int ft_isnumber(char *str)
+void ft_indexlst(t_list **unsorted, t_list **sorted)
 {
-    while (*str)
+    t_list *i;
+    t_list *j;
+    int index;
+
+    index = 0;
+    i = *sorted;
+    while (i)
     {
-        if (*str < '0' || *str > '9')
-            return (0);
-        str++;
+        j = *unsorted;
+        while (j)
+        {
+            if (i->data == j->data)
+                j->data = index;
+            j = j->next;
+        }
+        i = i->next;
+        index++;
     }
-    return (1);
 }
