@@ -6,14 +6,16 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/08 23:10:20 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/12 21:14:21 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "../inc/libft.h"
 
 int ft_isnumber(char *str)
 {
+    if (*str == '-' || *str == '+')
+        str++;
     while (*str)
     {
         if (*str < '0' || *str > '9')

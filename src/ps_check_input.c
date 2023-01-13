@@ -6,11 +6,12 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/11 21:29:54 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/12 21:15:47 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+#include "../inc/libft.h"
 
 int is_number(char *str)
 {

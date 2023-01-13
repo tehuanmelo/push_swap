@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 19:21:26 by tde-melo          #+#    #+#             */
-/*   Updated: 2023/01/12 21:14:40 by tehuanmelo       ###   ########.fr       */
+/*   Created: 2022/07/12 10:03:36 by tde-melo          #+#    #+#             */
+/*   Updated: 2023/01/12 21:15:09 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Parameters
-//     lst: The beginning of the list.
-// Return value
-//     Last node of the list
-// External functs.
-//     None
-// Description
-//     Returns the last node of the list.
+// DESCRIPTION
+//      The ft_strlen() function computes the length of the string s.
+// RETURN VALUES
+//      The ft_strlen() function returns the number of characters that
+//		precede the terminating NUL character.
 
 #include "../inc/libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+size_t	ft_strlen(const char *s)
 {
-	while (lst)
-	{
-		if (lst->next == NULL)
-			return (lst);
-		lst = lst->next;
-	}
-	return (lst);
+	size_t	i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
 }

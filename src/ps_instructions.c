@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   ps_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:01:00 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/11 13:34:28 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/12 22:41:40 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+#include "../inc/libft.h"
 
-void ra(t_list **list_a)
+// void sa(t_list **stack_a)
+// {
+    
+// }
+
+void ra(t_list **stack_a)
 {
     t_list *tmp;
     t_list *last;
 
-    if (!*list_a || ft_lstsize(*list_a) == 1)
+    if (!*stack_a || ft_lstsize(*stack_a) == 1)
         return;
-    tmp = *list_a;
-    last = ft_lstlast(*list_a);
-    *list_a = (*list_a)->next;
+    tmp = *stack_a;
+    last = ft_lstlast(*stack_a);
+    *stack_a = (*stack_a)->next;
     tmp->next = NULL;
     last->next = tmp;
     ft_putstr("ra\n");
