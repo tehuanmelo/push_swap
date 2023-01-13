@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/12 22:55:39 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/13 20:21:03 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ int main(int ac, char **av)
         input = av;
         stack_a = create_stack_a(input);
         copy = create_stack_a(input);
-        // print_list(stack_a, 'a');
+        print_list(stack_a, 'a');
         ft_sortlst(&copy);
         ft_indexlst(&stack_a, &copy);
-        // print_list(stack_a, 'A');
+        print_list(stack_a, 'a');
         ft_freelst(copy);
         push_swap(&stack_a, &stack_b);
-        // print_list(stack_a, 'a');
+        print_list(stack_a, 'a');
         ft_freelst(stack_a);
         ft_freelst(stack_b);
     }

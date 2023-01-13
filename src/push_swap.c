@@ -3,35 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:06:17 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/12 22:44:08 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/13 20:20:46 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 #include "../inc/libft.h"
 
-// void sort_3(t_list **stack_a, t_list **stack_b)
-// {
-//     t_list *tmp;
-//     int num1;
-//     int num2;
-//     int num3;
+// 1 3 2
+// 2 1 3
+// 2 3 1
+// 3 1 2
+// 3 2 1
 
-//     while (tmp)
-//     {
-//         if (tmp->data = 0)
-//             num1 = 0;
-//         else if (tmp->data = 1)
-//             num2 = 1;
-//         else
-//             num3 = 2;
-//         tmp = tmp->next;
-//     }
-//     if ()
-// }
+void sort_3(t_list **stack_a)
+{
+    if (((*stack_a)->data < (*stack_a)->next->data) && ((*stack_a)->next->data > (*stack_a)->next->next->data))   
+    {
+        // rra(stack_a);
+        sa(stack_a);
+    }
+}
 
 void sort_100(t_list **stack_a, t_list **stack_b, int bits, int size)
 {
@@ -65,6 +60,8 @@ void push_swap(t_list **stack_a, t_list **stack_b)
     size = ft_lstsize(*stack_a);
     while (((size - 1) >> max_bits) != 0)
         max_bits++;
-    sort_100(stack_a, stack_b, max_bits, size);
-   
+    if (size == 3)
+        sort_3(stack_a);
+    else if (size <= 100)
+        sort_100(stack_a, stack_b, max_bits, size);
 }

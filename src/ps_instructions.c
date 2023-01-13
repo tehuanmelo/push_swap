@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:01:00 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/12 22:41:40 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/13 20:19:07 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,36 @@ void ra(t_list **stack_a)
     tmp->next = NULL;
     last->next = tmp;
     ft_putstr("ra\n");
+}
+
+void rra(t_list **stack_a)
+{
+    t_list *tmp;
+    t_list *last;
+
+    if (!*stack_a || ft_lstsize(*stack_a) == 1)
+        return;
+    tmp = *stack_a;
+    last = ft_lstlast(*stack_a);
+    while (tmp->next != last)
+        tmp = tmp->next;
+    tmp->next = NULL;
+    last->next = *stack_a;
+    *stack_a = last;
+    ft_putstr("rra\n"); 
+}
+
+void sa(t_list **stack_a)
+{
+    t_list *tmp;
+
+    if (!*stack_a || ft_lstsize(*stack_a) == 1)
+        return;
+    tmp = *stack_a;
+    *stack_a = (*stack_a)->next;
+    tmp->next = (*stack_a)->next;
+    (*stack_a)->next = tmp;
+    ft_putstr("sa\n"); 
 }
 
 void pb(t_list **stack_a, t_list **stack_b)
