@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/13 20:21:03 by tde-melo         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:34:28 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// AND operator returns 0 if any bit of any operand is 0
-// OR operator returns 1 if any bit of any operand is 1
-// XOR operator returns 1 if the correspnding bits are opposite
+
 
 #include "../inc/push_swap.h"
 #include "../inc/libft.h"
@@ -24,7 +22,7 @@ void print_list(t_list *list, char c)
     printf("stack %c\n", c);
     while (list)
     {
-        printf("%d\n", list->data);
+        printf("%d\n", *(int *)list->data);
         list = list->next;
     }
 }
@@ -46,7 +44,7 @@ int main(int ac, char **av)
         copy = create_stack_a(input);
         print_list(stack_a, 'a');
         ft_sortlst(&copy);
-        ft_indexlst(&stack_a, &copy);
+        index_stack(&stack_a, &copy);
         print_list(stack_a, 'a');
         ft_freelst(copy);
         push_swap(&stack_a, &stack_b);
@@ -55,3 +53,23 @@ int main(int ac, char **av)
         ft_freelst(stack_b);
     }
 }
+
+// int main(int ac, char **av)
+// {
+//     char **input = av;
+//     char **new_input;
+//     char **tmp;
+//     t_list *stack;
+//     t_list new;
+
+//     stack = NULL;
+//     while(*input)
+//     {
+//         tmp = ft_split(*input, ' ');
+//         while (*tmp)
+//         {
+//             new = ft_lstnew(*tmp);
+//         }
+//     }
+//     return 0;
+// }

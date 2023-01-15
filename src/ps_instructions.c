@@ -3,20 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ps_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:01:00 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/13 20:19:07 by tde-melo         ###   ########.fr       */
+/*   Updated: 2023/01/15 20:51:00 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 #include "../inc/libft.h"
-
-// void sa(t_list **stack_a)
-// {
-    
-// }
 
 void ra(t_list **stack_a)
 {

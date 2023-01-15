@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:16:08 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/12 21:18:45 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/15 20:42:33 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct s_list
 {
-    int data;
+    void *data;
     struct s_list *next;
 } t_list;
 
@@ -39,8 +39,8 @@ void    ft_lstadd_back(t_list **lst, t_list *new);
 void    ft_sortlst(t_list **list);
 void    ft_freelst(t_list *list);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-void    ft_indexlst(t_list **unsorted, t_list **sorted);
-t_list  *ft_lstnew(int content);
+void    index_stack(t_list **unsorted, t_list **sorted);
+t_list  *ft_lstnew(void *content);
 t_list  *ft_lstlast(t_list *lst);
 
 #endif
