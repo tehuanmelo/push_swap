@@ -3,7 +3,7 @@ vpath %.c src
 SRC = $(wildcard src/*c)
 OBJ = $(patsubst src/%.c, obj/%.o, $(SRC))
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+# CFLAGS = -Wall -Werror -Wextra
 # CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address,undefined
 FT_PRINTF = ./inc/ft_printf
 
@@ -12,7 +12,8 @@ FT_PRINTF = ./inc/ft_printf
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $^ -o $@
+	# $(CC) $(CFLAGS) $^ -o $@
+	$(CC) $^ -o $@
 	echo "Compilation done successfully!"
 	echo "Execute ./push_swap <list of numbers>"
 

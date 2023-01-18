@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:16:08 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 20:42:33 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/18 20:33:25 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlen(const char *s);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void    ft_putstr(char *str);
-int     ft_atoi(const char *str);
+
 int     ft_isnumber(char *str);
 
 void	*ft_calloc(size_t count, size_t size);

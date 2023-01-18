@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 21:09:45 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/18 21:13:33 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,6 @@ void print_list(t_list *list, char c)
     }
 }
 
-char **get_input(char **str)
-{
-    char **input;
-    
-    while (*str)
-    {
-        input = ft_split(*str, ' ');
-        str++;
-    }
-}
 
 int main(int ac, char **av)
 {
@@ -65,22 +55,4 @@ int main(int ac, char **av)
     }
 }
 
-// int main(int ac, char **av)
-// {
-//     char **input = av;
-//     char **new_input;
-//     char **tmp;
-//     t_list *stack;
-//     t_list new;
 
-//     stack = NULL;
-//     while(*input)
-//     {
-//         tmp = ft_split(*input, ' ');
-//         while (*tmp)
-//         {
-//             new = ft_lstnew(*tmp);
-//         }
-//     }
-//     return 0;
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:01:00 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 20:51:00 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/18 21:14:32 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void ra(t_list **stack_a)
     *stack_a = (*stack_a)->next;
     tmp->next = NULL;
     last->next = tmp;
-    ft_putstr("ra\n");
+    // ft_putstr("ra\n");
 }
 
 void rra(t_list **stack_a)
@@ -42,7 +42,7 @@ void rra(t_list **stack_a)
     tmp->next = NULL;
     last->next = *stack_a;
     *stack_a = last;
-    ft_putstr("rra\n"); 
+    // ft_putstr("rra\n"); 
 }
 
 void sa(t_list **stack_a)
@@ -55,7 +55,7 @@ void sa(t_list **stack_a)
     *stack_a = (*stack_a)->next;
     tmp->next = (*stack_a)->next;
     (*stack_a)->next = tmp;
-    ft_putstr("sa\n"); 
+    // ft_putstr("sa\n"); 
 }
 
 void pb(t_list **stack_a, t_list **stack_b)
@@ -70,7 +70,7 @@ void pb(t_list **stack_a, t_list **stack_b)
     *stack_a = tmp->next;
     free(tmp);
     ft_lstadd_front(stack_b, new);
-    ft_putstr("pb\n");
+    // ft_putstr("pb\n");
 }
 
 void pa(t_list **stack_a, t_list **stack_b)
@@ -85,5 +85,5 @@ void pa(t_list **stack_a, t_list **stack_b)
     *stack_b = tmp->next;
     free(tmp);
     ft_lstadd_front(stack_a, new);
-    ft_putstr("pa\n");
+    // ft_putstr("pa\n");
 }

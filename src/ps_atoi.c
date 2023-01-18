@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ps_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:59:22 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/12 21:13:45 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/18 20:38:31 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include "../inc/libft.h"
 
-int	ft_atoi(const char *str)
+int	ps_atoi(const char *str)
 {
 	long long	res;
 	int			sign;
@@ -42,6 +42,11 @@ int	ft_atoi(const char *str)
 			return (-1);
 		res = res * 10 + *str - '0';
 		str++;
+	}
+	while (*str)
+	{
+		if (*str < '0' || *str > '9')
+			return (0);
 	}
 	return (res * sign);
 }
