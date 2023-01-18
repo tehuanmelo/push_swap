@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 19:14:01 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/15 21:03:14 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /* create_stack_a function iterates over the input, converts the string 
 into an integer and assigns its value to the content variable. 
-Creates a new node and assign the content variable as its data value. 
+Then creates a new node and assign the content variable as its data value. 
 Lastly, insert the new node into the stack. 
 """Due our struct has a void pointer to receives the data, we have to 
 allocate memory for our variable content, if not the integer value

@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 19:34:28 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/15 21:09:45 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ void print_list(t_list *list, char c)
     {
         printf("%d\n", *(int *)list->data);
         list = list->next;
+    }
+}
+
+char **get_input(char **str)
+{
+    char **input;
+    
+    while (*str)
+    {
+        input = ft_split(*str, ' ');
+        str++;
     }
 }
 
