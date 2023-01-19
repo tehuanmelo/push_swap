@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 18:46:25 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/19 13:26:02 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void ft_sortlst(t_list **list)
         j = i->next;
         while (j)
         {
-            if (*(int *)i->data > *(int *)j->data)
+            if (i->data > j->data)
             {
-                tmp = *(int *)i->data;
-                *(int *)i->data = *(int *)j->data;
-                *(int *)j->data = tmp;
+                tmp = i->data;
+                i->data = j->data;
+                j->data = tmp;
             }
             j = j->next;
         }

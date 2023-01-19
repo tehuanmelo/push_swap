@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:16:08 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/18 20:33:25 by tde-melo         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:46:24 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct s_list
 {
-    void *data;
+    int data;
     struct s_list *next;
 } t_list;
 
@@ -39,8 +39,8 @@ void    ft_lstadd_back(t_list **lst, t_list *new);
 void    ft_sortlst(t_list **list);
 void    ft_freelst(t_list *list);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-void    index_stack(t_list **unsorted, t_list **sorted);
-t_list  *ft_lstnew(void *content);
+
+t_list  *ft_lstnew(int content);
 t_list  *ft_lstlast(t_list *lst);
 
 #endif

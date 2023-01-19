@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:06:17 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 19:31:04 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/19 14:06:26 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,20 @@ and call the appropriate instruction to sort the numbers */
 
 void sort_3(t_list **stack_a)
 {
-    if ((*(int *)(*stack_a)->data < *(int *)(*stack_a)->next->data) &&
-        (*(int *)(*stack_a)->data < *(int *)(*stack_a)->next->next->data))
+    if (((*stack_a)->data < (*stack_a)->next->data) &&
+        ((*stack_a)->data < (*stack_a)->next->next->data))
     {
         rra(stack_a);
         sa(stack_a);
     }
-    else if ((*(int *)(*stack_a)->data > *(int *)(*stack_a)->next->data) &&
-        (*(int *)(*stack_a)->data < *(int *)(*stack_a)->next->next->data))
+    else if (((*stack_a)->data > (*stack_a)->next->data) &&
+        ((*stack_a)->data < (*stack_a)->next->next->data))
         sa(stack_a);
-    else if ((*(int *)(*stack_a)->data < *(int *)(*stack_a)->next->data) &&
-        (*(int *)(*stack_a)->data > *(int *)(*stack_a)->next->next->data))
+    else if (((*stack_a)->data < (*stack_a)->next->data) &&
+        ((*stack_a)->data > (*stack_a)->next->next->data))
         rra(stack_a);
-    else if ((*(int *)(*stack_a)->data > *(int *)(*stack_a)->next->data) &&
-        (*(int *)(*stack_a)->next->data < *(int *)(*stack_a)->next->next->data))
+    else if (((*stack_a)->data > (*stack_a)->next->data) &&
+        ((*stack_a)->next->data < (*stack_a)->next->next->data))
         ra(stack_a);
     else
     {
@@ -58,7 +58,7 @@ void sort_5(t_list **stack_a, t_list **stack_b)
     i = 0;
     while (i < 5)
     {
-        if (*(int *)(*stack_a)->data == 4 || *(int *)(*stack_a)->data == 0)
+        if ((*stack_a)->data == 4 || (*stack_a)->data == 0)
             pb(stack_a, stack_b);
         else
             ra(stack_a);
@@ -67,7 +67,7 @@ void sort_5(t_list **stack_a, t_list **stack_b)
     sort_3(stack_a);
     pa(stack_a, stack_b);
     pa(stack_a, stack_b);
-    if (*(int *)(*stack_a)->data == 4)
+    if ((*stack_a)->data == 4)
         ra(stack_a);
     else
     {
@@ -95,7 +95,7 @@ void sort_big(t_list **stack_a, t_list **stack_b, int bits, int size)
         j = 0;
         while (j < size)
         {
-            if (((*(int *)(*stack_a)->data >> i) & 1) == 1)
+            if ((((*stack_a)->data >> i) & 1) == 1)
                 ra(stack_a);
             else
                 pb(stack_a, stack_b);
@@ -129,3 +129,5 @@ void push_swap(t_list **stack_a, t_list **stack_b)
     else if (size > 5)
         sort_big(stack_a, stack_b, max_bits, size);
 }
+
+

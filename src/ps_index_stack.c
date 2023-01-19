@@ -6,31 +6,31 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:14:37 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/15 19:34:17 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/19 13:50:27 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void index_stack(t_list **unsorted, t_list **sorted)
+void index_stack(t_list *unsorted, t_list *sorted)
 {
     int index;
-    t_list *head_sorted;
-    t_list *head_unsorted;
+    t_list *tmp;
 
-    head_sorted = *sorted;
-    head_unsorted = *unsorted;
-    while (head_unsorted)
+    while (unsorted)
     {
         index = 0;
-        while (head_sorted)
+        tmp = sorted;
+        while (tmp)
         {
-            if (*(int *)head_unsorted->data == *(int *)head_sorted->data)
-                *(int *)head_unsorted->data = index;
-            head_sorted = head_sorted->next;
+            if (unsorted->data == tmp->data)
+            {
+                unsorted->data = index;
+                break;
+            }
+            tmp = tmp->next;
             index++;
         }
-        head_unsorted = head_unsorted->next;
-        head_sorted = *sorted;
+        unsorted = unsorted->next;
     }
 }

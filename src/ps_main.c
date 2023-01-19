@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/18 21:13:33 by tde-melo         ###   ########.fr       */
+/*   Updated: 2023/01/19 14:21:57 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void print_list(t_list *list, char c)
     printf("stack %c\n", c);
     while (list)
     {
-        printf("%d\n", *(int *)list->data);
+        printf("%d\n", list->data);
         list = list->next;
     }
 }
@@ -42,14 +42,13 @@ int main(int ac, char **av)
     {
         input = av;
         stack_a = create_stack_a(input);
+        if (!stack_a)
+           print_error();
         copy = create_stack_a(input);
-        print_list(stack_a, 'a');
         ft_sortlst(&copy);
-        index_stack(&stack_a, &copy);
-        print_list(stack_a, 'a');
+        index_stack(stack_a, copy);
         ft_freelst(copy);
         push_swap(&stack_a, &stack_b);
-        print_list(stack_a, 'a');
         ft_freelst(stack_a);
         ft_freelst(stack_b);
     }
