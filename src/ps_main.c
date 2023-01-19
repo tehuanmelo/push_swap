@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 14:21:57 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/19 23:31:06 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ int main(int ac, char **av)
     if (ac > 1)
     {
         input = av;
-        stack_a = create_stack_a(input);
+        stack_a = create_stack(input);
         if (!stack_a)
            print_error();
-        copy = create_stack_a(input);
-        ft_sortlst(&copy);
+        copy = create_stack(input);
+        ps_sortlist(&copy);
         index_stack(stack_a, copy);
-        ft_freelst(copy);
+        ps_freelist(copy);
         push_swap(&stack_a, &stack_b);
-        ft_freelst(stack_a);
-        ft_freelst(stack_b);
+        ps_freelist(stack_a);
+        ps_freelist(stack_b);
     }
 }
 

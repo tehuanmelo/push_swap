@@ -12,8 +12,7 @@ FT_PRINTF = ./inc/ft_printf
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	# $(CC) $(CFLAGS) $^ -o $@
-	$(CC) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 	echo "Compilation done successfully!"
 	echo "Execute ./push_swap <list of numbers>"
 

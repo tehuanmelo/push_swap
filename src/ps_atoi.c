@@ -6,19 +6,14 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:59:22 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 14:08:55 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/19 23:44:52 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** DESCRIPTION
-**      The atoi() function converts the initial portion of the
-**      string pointed to by str to int representation.
-**
-*/
-
 #include "../inc/libft.h"
 
+/* This version of the atoi function also checks whatever is after the last 
+number, if detects any character other than a number returns zero. */
 int ps_atoi(const char *str)
 {
 	long long res;
@@ -36,10 +31,6 @@ int ps_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		if (sign == -1 && res * sign <= LLONG_MIN / 10)
-			return (0);
-		if (res >= LLONG_MAX / 10)
-			return (-1);
 		res = res * 10 + *str - '0';
 		str++;
 	}

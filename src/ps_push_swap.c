@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:06:17 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 14:06:26 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/19 23:24:35 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 /* There is just a single solution to sort two numbers, simply invert
 both numbers applying sa() instruction */
-
 void sort_2(t_list **stack_a)
 {
     sa(stack_a);
@@ -26,7 +25,6 @@ sorted that we can exclude, so remains 5 possible combinations as down below.
 1 3 2 - 2 1 3 - 2 3 1 - 3 1 2 - 3 2 1
 Sort three sorts the numbers manually we check each position on the stack
 and call the appropriate instruction to sort the numbers */
-
 void sort_3(t_list **stack_a)
 {
     if (((*stack_a)->data < (*stack_a)->next->data) &&
@@ -51,6 +49,11 @@ void sort_3(t_list **stack_a)
     }
 }
 
+/* sort_5 looks for 4 and 0 on top of the stack at first they are the 
+first and last indexes if find it push it to stack b, if not put 
+it on the bottom of stack a. Once it finishes the search sorts the 
+numbers on stack a, then push the numbers on stack b back to stack a. 
+Now send the 4 and 0 to their places. */
 void sort_5(t_list **stack_a, t_list **stack_b)
 {
     int i;
@@ -83,7 +86,6 @@ the bottom of the stack, if it's zero sends it to stack b, after checking
 all the numbers it sends the numbers on stack b to the top of stack a. Then
 the algorithm does the same for the next bit and keeps doing until the
 last bit. */
-
 void sort_big(t_list **stack_a, t_list **stack_b, int bits, int size)
 {
     int i;
@@ -110,7 +112,6 @@ void sort_big(t_list **stack_a, t_list **stack_b, int bits, int size)
 /* push_swap checks the length of the input and decides wich algorithm can
 sort the data in a more eficiently way
 max_bits is the number of bits the max number contains */
-
 void push_swap(t_list **stack_a, t_list **stack_b)
 {
     int max_bits;

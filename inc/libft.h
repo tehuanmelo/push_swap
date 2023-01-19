@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:16:08 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 13:46:24 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/19 23:26:44 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ void	ft_bzero(void *s, size_t n);
 
 int     ft_lstsize(t_list *lst);
 void    ft_lstadd_back(t_list **lst, t_list *new);
-void    ft_sortlst(t_list **list);
-void    ft_freelst(t_list *list);
+
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
 t_list  *ft_lstnew(int content);
