@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:16:08 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/20 13:32:01 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/20 18:35:41 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int     ps_atoi(const char *str);
 void    index_stack(t_list *unsorted, t_list *sorted);
 void    ps_sortlist(t_list **list);
 void    ps_freelist(t_list *list);
+void    check_duplicates(t_list *list);
 
 
 #endif
