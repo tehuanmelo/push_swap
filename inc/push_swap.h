@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:16:08 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 23:27:11 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/20 13:32:01 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "../inc/libft.h"
 
-void    print_error();
+void    print_error_exit();
 void    push_swap(t_list **stack_a, t_list **stack_b);
 t_list  *create_stack(char **list_of_numbers);
 

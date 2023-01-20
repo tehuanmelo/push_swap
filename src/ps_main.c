@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 23:31:06 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/20 13:32:33 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(int ac, char **av)
         input = av;
         stack_a = create_stack(input);
         if (!stack_a)
-           print_error();
+           print_error_exit();
         copy = create_stack(input);
         ps_sortlist(&copy);
         index_stack(stack_a, copy);

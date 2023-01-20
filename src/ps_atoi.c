@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:59:22 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 23:44:52 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/20 13:43:16 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 number, if detects any character other than a number returns zero. */
 int ps_atoi(const char *str)
 {
-	long long res;
+	long res;
 	int sign;
 
 	res = 0;
@@ -32,6 +32,10 @@ int ps_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		res = res * 10 + *str - '0';
+		if (sign == -1 && res * sign < INT_MIN)
+			return (0);
+		if (sign == 1 && res > INT_MAX)
+			return (0);
 		str++;
 	}
 	if ((*str && *str < '0') || (*str && *str > '9'))

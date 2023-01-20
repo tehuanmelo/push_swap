@@ -6,7 +6,7 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/20 00:11:31 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/20 13:31:26 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,16 @@ int check_zero(char *str)
         if (*str == '-' || *str == '+')
             str++;
         if (*str == '0')
-            return (1);
+            str++;
         else
+            return (0);
+        if (*str)
             return (0);
     }
     return 1;
 }
 
-int check_number(long long number, char *str)
+int check_number(long number, char *str)
 {
     if (number == 0)
     {
@@ -57,8 +59,6 @@ int check_number(long long number, char *str)
             return 0;
         return 1;
     }
-    if (number > 2147483647)
-        return 0;
     return 1;
 }
 
@@ -71,7 +71,7 @@ t_list *create_stack(char **input)
     t_list *list;
     t_list *node;
     char **tmp;
-    long long number;
+    int number;
     int i;
 
     list = NULL;
@@ -82,10 +82,13 @@ t_list *create_stack(char **input)
         while (tmp[i])
         {
             number = ps_atoi(tmp[i]);
-            if (!(check_number(number, tmp[i])))
+            if (number == 0)
             {
-                free_array(tmp);
-                print_error();
+                if (!(check_number(number, tmp[i])))
+                {
+                    free_array(tmp);
+                    print_error_exit();
+                }
             }
             node = ft_lstnew(number);
             ft_lstadd_back(&list, node);
