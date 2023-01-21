@@ -6,13 +6,13 @@
 /*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/19 22:45:45 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/21 18:36:07 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void ps_sortlist(t_list **list)
+void sortlist(t_list **list)
 {
     t_list *i;
     t_list *j;

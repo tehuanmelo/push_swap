@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ps_create_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/20 15:59:45 by tde-melo         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:25:20 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 #include "../inc/push_swap.h"
+
 
 /* free_array free the memory allocated to the string created from ft_split */
 void	free_array(char **str)
@@ -28,6 +29,13 @@ void	free_array(char **str)
 	while (i < len)
 		free(str[i++]);
 	free(str);
+}
+
+void free_list_exit(t_list *stack, char **str)
+{
+	free_array(str);
+    freelist(stack);
+	print_error_exit();
 }
 
 /* Inside the create_stack function if the atoi detects any error it will
@@ -55,13 +63,13 @@ Then creates a new node and assign the content variable as its data value.
 Lastly, insert the new node as the last node on the stack. */
 t_list	*create_stack(char **input)
 {
-	t_list	*list;
+	t_list	*stack;
 	t_list	*node;
 	char	**tmp;
 	int		number;
 	int		i;
 
-	list = NULL;
+	stack = NULL;
 	while (*(++input))
 	{
 		tmp = ft_split(*input, ' ');
@@ -72,16 +80,12 @@ t_list	*create_stack(char **input)
 			if (number == 0)
 			{
 				if (!(check_zero(tmp[i])))
-				{
-					free_array(tmp);
-                    ps_freelist(list);
-					print_error_exit();
-				}
+					free_list_exit(stack, tmp);
 			}
 			node = ft_lstnew(number);
-			ft_lstadd_back(&list, node);
+			ft_lstadd_back(&stack, node);
 		}
 		free_array(tmp);
 	}
-	return (list);
+	return (stack);
 }
