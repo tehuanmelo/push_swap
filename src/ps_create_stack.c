@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ps_create_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/21 23:25:20 by tehuanmelo       ###   ########.fr       */
+/*   Updated: 2023/01/24 20:15:29 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 #include "../inc/push_swap.h"
-
 
 /* free_array free the memory allocated to the string created from ft_split */
 void	free_array(char **str)
@@ -31,28 +30,30 @@ void	free_array(char **str)
 	free(str);
 }
 
-void free_list_exit(t_list *stack, char **str)
+void	free_list_exit(t_list *stack, char **str)
 {
 	free_array(str);
-    freelist(stack);
+	freelist(stack);
 	print_error_exit();
 }
 
-/* Inside the create_stack function if the atoi detects any error it will
-return a zero, so we have to check whether it is just an error or a
-valid zero input. The function iterates through the string if the first
-value is a '+' sign or a '-' sign increments and checks if the next
-value is a '0' if not return false. */
-int	check_zero(char *str)
+/* Check number verify if the number is wether a zero or not, if the number is 
+zero check number iterates over the string to verify if it is a valid 
+zero or an error coming from atoi. */
+int	check_number(int number, char *str)
 {
-	while (*str)
+	if (number == 0)
 	{
-		if (*str == '-' || *str == '+')
-			str++;
-		while (*str == '0')
-			str++;
-		if (*str)
-			return (0);
+		while (*str)
+		{
+			if (*str == '-' || *str == '+')
+				str++;
+			while (*str == '0')
+				str++;
+			if (*str)
+				return (0);
+		}
+		return (1);
 	}
 	return (1);
 }
@@ -73,15 +74,14 @@ t_list	*create_stack(char **input)
 	while (*(++input))
 	{
 		tmp = ft_split(*input, ' ');
+		if (!*tmp)
+			free_list_exit(stack, tmp);
 		i = -1;
 		while (tmp[++i])
 		{
 			number = ps_atoi(tmp[i]);
-			if (number == 0)
-			{
-				if (!(check_zero(tmp[i])))
-					free_list_exit(stack, tmp);
-			}
+			if (!(check_number(number, tmp[i])))
+				free_list_exit(stack, tmp);
 			node = ft_lstnew(number);
 			ft_lstadd_back(&stack, node);
 		}

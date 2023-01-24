@@ -12,26 +12,26 @@
 
 #include "../inc/libft.h"
 
-void sortlist(t_list **list)
+void	sortlist(t_list **list)
 {
-    t_list *i;
-    t_list *j;
-    int tmp;
+	t_list	*i;
+	t_list	*j;
+	int		tmp;
 
-    i = *list;
-    while (i)
-    {
-        j = i->next;
-        while (j)
-        {
-            if (i->data > j->data)
-            {
-                tmp = i->data;
-                i->data = j->data;
-                j->data = tmp;
-            }
-            j = j->next;
-        }
-        i = i->next;
-    }
+	i = *list;
+	while (i)
+	{
+		j = i->next;
+		while (j)
+		{
+			if (i->data > j->data)
+			{
+				tmp = i->data;
+				i->data = j->data;
+				j->data = tmp;
+			}
+			j = j->next;
+		}
+		i = i->next;
+	}
 }

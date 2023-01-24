@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
 #include "../inc/libft.h"
+#include "../inc/push_swap.h"
 
-void print_error_exit()
+void	print_error_exit(void)
 {
-    ft_putstr("Error\n");
-    exit(1);
+	ft_putstr("Error\n");
+	exit(1);
 }

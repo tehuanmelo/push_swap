@@ -14,10 +14,10 @@
 
 /* This version of the atoi function also checks whatever is after the last 
 number, if detects any character other than a number returns zero. */
-int ps_atoi(const char *str)
+int	ps_atoi(const char *str)
 {
-	long res;
-	int sign;
+	long	res;
+	int		sign;
 
 	res = 0;
 	sign = 1;
