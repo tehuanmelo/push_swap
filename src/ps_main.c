@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tehuanmelo <tehuanmelo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:28:41 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/24 18:01:03 by tde-melo         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:07:09 by tehuanmelo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ int	main(int ac, char **av)
 		freelist(stack_a);
 		freelist(stack_b);
 	}
+    return (0);
 }
