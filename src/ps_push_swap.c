@@ -6,7 +6,7 @@
 /*   By: tde-melo <tde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:06:17 by tehuanmelo        #+#    #+#             */
-/*   Updated: 2023/01/24 17:29:00 by tde-melo         ###   ########.fr       */
+/*   Updated: 2023/01/27 11:41:37 by tde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,12 +121,12 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 	size = ft_lstsize(*stack_a);
 	while (((size - 1) >> max_bits) != 0)
 		max_bits++;
-	if (size < 3)
+	if (size == 2)
 		sort_2(stack_a);
 	else if (size == 3)
 		sort_3(stack_a);
-	else if (size <= 5)
+	else if (size == 5)
 		sort_5(stack_a, stack_b);
-	else if (size > 5)
+	else
 		sort_big(stack_a, stack_b, max_bits, size);
 }
