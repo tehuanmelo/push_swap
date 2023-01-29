@@ -52,6 +52,8 @@ To test the code simply rum the program name on the terminal, followed by a sequ
 ./push_swap 3 2 1
 ````
 
+<img width="466" alt="Screenshot 2023-01-29 at 12 22 03 PM" src="https://user-images.githubusercontent.com/59938530/215314603-68a27c9a-12ef-44a3-ab86-e39501542fd0.png">
+
 
 ## Support
 
