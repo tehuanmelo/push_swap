@@ -16,7 +16,7 @@ Here's what you need to know to understand Push_swap:
 
 - Testing: The program is tested using a set of provided test cases, as well as additional test cases created by the user.
 
-Push_swap is a challenging project that requires a deep understanding of stack data structures and sorting algorithms. It's a great opportunity to improve your coding skills and problem-solving abilities.
+Push_swap is a challenging project that requires a deep understanding of stack data structures and sorting algorithms. It's a great opportunity to improve coding skills and problem-solving abilities.
 
 
 
